@@ -18,7 +18,9 @@ describe MusixMatchService do
     expect(response["message"]["body"]["music_genre_list"]).to be_an(Array)
   end
 
-  it 'can find a list of tracks by an artist search' do
+  xit 'can find a list of tracks by an artist search' do
+
+    # API has changed. THis now requires a commerical plan
     response = @m.tracks_from_artist("NEEDTOBREATH")
 
     expect(response).to have_key("message")
