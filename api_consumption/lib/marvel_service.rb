@@ -1,6 +1,8 @@
 class MarvelService
 
-  
+  def character
+
+  end
 
 
   def connection
