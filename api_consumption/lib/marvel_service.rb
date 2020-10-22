@@ -9,6 +9,15 @@ class MarvelService
     JSON.parse(response.body)
   end
 
+  def creators(query)
+    if query.keys.first == :last_name
+      response = connection.get("v1/public/creators?lastName=#{query.values.first}#{self.api_auth}")
+    elsif query.keys.first == :first_name
+      response = connection.get("v1/public/creators?firstName=#{query.values.first}#{self.api_auth}")
+    end
+    JSON.parse(response.body)
+  end
+
 
   def connection
     Faraday.new(
